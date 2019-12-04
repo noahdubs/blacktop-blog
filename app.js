@@ -41,6 +41,7 @@ app.use("/", indexRoute);
 app.use("/", userRoute);
 app.use("/:username/post", postRoute);
 
+
 app.listen(3000, (req, res)=>{
     console.log("starting on port 3000");
 });

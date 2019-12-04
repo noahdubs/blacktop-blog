@@ -1,6 +1,8 @@
+<%- include ('../partials/header') %>
 <h1>Edit Form</h1>
 
 <form action="/<%= user.username %>?_method=PUT" method="POST">
-    <input type="text" value="<% user.username %>" name="user[username]">
+    <input type="text" value="<%= user.username %>" name="user[username]">
     <button>Submit</button>
 </form>
+<%- include ('../partials/footer')  %>

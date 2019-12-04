@@ -1,6 +1,12 @@
+<%- include ('../partials/header') %>
 <h1>New Post Form</h1>
 
-<form action="/<%=  user.username %>/post" method="POST"> 
-    <input type="text" placeholder="what do you have to say?" name="post[text]">
-    <button>post</button>
+<form action="/<%= user.username %>/post" method="POST">
+    <p>Posting as <%= user.username %></p>
+    <input type="text" name="post[text]" placeholder="your post">
+    <button>Post</button>
 </form>
+   
+
+
+<%- include ('../partials/footer')  %>

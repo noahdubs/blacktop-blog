@@ -1,7 +1,11 @@
+<%- include ('../partials/header') %>
 <h1>individual post</h1>
 
+<a href="/<%= post.author.username %>"><%= post.author.username %></a>
 <p><%= post.text %></p>
 
-<form action="/<%= currentUser.username %>/post/<%= post._id %>?_method=DELETE" method="POST">
+<form action="/<%= post.author %>/post/<%= post._id %>?_method=DELETE" method="POST">
     <button>Click here to delete this post</button>
 </form>
+
+<%- include ('../partials/footer')  %>

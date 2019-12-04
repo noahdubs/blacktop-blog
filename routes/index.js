@@ -2,6 +2,7 @@ var express = require("express");
 var router = express.Router();
 var passport = require("passport");
 var User = require("../models/user");
+var middleware = require("../middleware");
 
 // nothing is behind these routes
 
@@ -10,7 +11,7 @@ router.get("/", (req, res)=>{
     res.render('landing');
 });
 
-router.get("/home", (req, res)=>{
+router.get("/home", middleware.isLoggedIn, (req, res)=>{
     res.render("home");
 });
 

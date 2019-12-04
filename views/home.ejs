@@ -1,3 +1,8 @@
+<%- include ('./partials/header') %>
 <h1>This is the home page</h1>
 
-<p>Go to your profile <a href="/<%= currentUser.username %>">Here</a></p>
+<% if(currentUser){ %>
+    <p>Go to your profile <a href="/<%= currentUser.username %>">Here</a></p>
+<% } %>
+
+<%- include ('./partials/footer')  %>

@@ -1,6 +1,30 @@
+<%- include ('../partials/header') %>
+<h1><%= username %></h1>
+<p><a href="<%= username %>/post/new">Create new Post</a></p>
+
+<h3>Posts by: <%= username %></h3>
+<h5><a href="/<%= username %>/edit">Edit profile</a></h5>
+<form action="/<%= username %>?_method=DELETE" method="POST">
+    <button>Delete Profile</button>
+</form>
+
+<% posts.forEach((post)=>{ %>
+    <p><%= username %></p>
+    <p><%= post.text %></p>
+    <form action="<%= username %>/post/<%= post._id %>?_method=DELETE" method="POST">
+        <button>Delete Post</button>
+    </form>
+<% }) %>
 
 
-<p><%= user.posts %></p>
+
+
+
+
+
+
+<%- include ('../partials/footer')  %>
+
 
 
 
