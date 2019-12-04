@@ -1,27 +1,60 @@
 <%- include ('../partials/header') %>
-<h1><%= username %></h1>
-<p><a href="<%= username %>/post/new">Create new Post</a></p>
+<!-- <h1><%= username %></h1>
 
-<h3>Posts by: <%= username %></h3>
 <h5><a href="/<%= username %>/edit">Edit profile</a></h5>
 <form action="/<%= username %>?_method=DELETE" method="POST">
     <button>Delete Profile</button>
-</form>
-
-<% posts.forEach((post)=>{ %>
-    <p><%= username %></p>
-    <p><%= post.text %></p>
-    <form action="<%= username %>/post/<%= post._id %>?_method=DELETE" method="POST">
-        <button>Delete Post</button>
-    </form>
-<% }) %>
+</form> -->
+<div class="jumbotron jumbotron-fluid newcolors">
+    <div class="container">
+        <h3><%= username %></h3>
+    </div>
+</div>
 
 
-
-
-
-
-
+<div class="container-fluid black no-padding">
+    <div class="row">
+        <div class="col-lg-3 left">
+            <nav id="sidebar">
+                <div class="sidebar-header newcolors">
+                    <h4>sidebar header</h4>
+                </div>
+                <ul class="list-unstyled components newcolors">
+                    <p>Heading</p>
+                    <li>
+                        <a href="/<%= username %>">Profile</a>
+                    </li>
+                    <li>
+                        <a href="#">About</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="col-lg-6 middle">
+                <h3><%= username %>'s recent posts</h3>
+                <% posts.forEach((post)=>{ %>
+                    <article class="media content-section">
+                        <div class="media-body newcolors">
+                            <div class="article-metadata">
+                                <a href="<%= username %>"><%= username %></a>
+                                <a href="/<%= username %>/post/<%= post._id %>">See more</a>
+                            </div>
+                            <p class="article-content"><%= post.text %></p>
+                        </div>
+                    </article>
+                <% }) %>
+        </div>
+        <div class="col-lg-3 right">
+            <div class="newcolors">
+                <h3>New Post</h3>
+                <form action="/<%= username %>" method="POST">
+                    <input type="textarea" name="post[text]" placeholder="Whats on your mind?">
+                    <button class="btn btn-md">Post</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 
 <%- include ('../partials/footer')  %>
 

@@ -62,7 +62,7 @@ router.delete("/:id", (req, res)=>{
         if(err) {
             res.redirect("/");
         } else {
-            res.redirect("/"+req.params.username);
+            res.redirect("/");
         }
     });
 });
