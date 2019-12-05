@@ -5,9 +5,11 @@
 <form action="/<%= username %>?_method=DELETE" method="POST">
     <button>Delete Profile</button>
 </form> -->
-<div class="jumbotron jumbotron-fluid newcolors">
+<div class="jumbotron jumbotron-fluid newcolors pinkish">
     <div class="container">
-        <h3><%= username %></h3>
+        <h3><%= name %></h3>
+        <p>@<%= username %></p>
+        <img src="<%= picture %>">
     </div>
 </div>
 
@@ -15,16 +17,15 @@
 <div class="container-fluid black no-padding">
     <div class="row">
         <div class="col-lg-3 left">
-            <nav id="sidebar">
-                <div class="sidebar-header newcolors">
-                    <h4>sidebar header</h4>
+            <nav id="sidebar" class="greenish">
+                <div class="sidebar-header newcolors orange">
+                    <h4 class="spaced">sidebar header</h4>
                 </div>
                 <ul class="list-unstyled components newcolors">
-                    <p>Heading</p>
-                    <li>
+                    <li class="spaced yellow">
                         <a href="/<%= username %>">Profile</a>
                     </li>
-                    <li>
+                    <li class="spaced purple">
                         <a href="#">About</a>
                     </li>
                 </ul>
