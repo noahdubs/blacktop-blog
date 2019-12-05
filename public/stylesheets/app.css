@@ -3,9 +3,21 @@ body {
     color: #a5a5a5;
 }
 
-.light {
-    color: white;
+/* new styles */
+
+/* padding for top of posts box */
+.space-top {
+    padding-top: 2em;
 }
+
+
+
+a :focus {
+    color: #19B1FD;
+    background: #0e0e0e;
+}
+
+ /*  */
 .no-padding {
     padding: 0;
 }
@@ -78,3 +90,48 @@ body {
 .pinkish {
     border-bottom: 1px solid #FF4242;
 }
+
+/* New navbar styles, remove li dot */
+.nav-item .nav-link .nav-item:hover {
+    color: #0e0e0e;
+    background-color: #a5a5a5;
+}
+
+/* navbar link colors */
+.light {
+    color: #a5a5a5;
+    background: #0e0e0e;
+    position: relative;
+    display: block;
+    margin:0;
+    padding-right: 20px;
+    padding-left: 20px;
+    
+
+}
+
+/* remove li dot */
+.nav-item {
+    list-style-type: none;
+}
+
+
+/* hover bug */
+.light:focus {
+    background-color: #171717;
+    color:#a5a5a5;
+    text-decoration: none;
+}
+.light:hover{
+    background-color: #171717;
+    color: #a5a5a5;
+    text-decoration: none;
+}
+
+/* take away padding from right side of navbar */
+.l-space {
+    padding:0;
+}
+
+
+
