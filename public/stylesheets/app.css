@@ -1,6 +1,27 @@
 body {
-    background: #0e0e0e;
+    background:#171717;
     color: #a5a5a5;
+}
+
+.profile-top {
+    background:#171717;
+    padding: 2rem 1rem;
+}
+
+.content-section {
+    background:  #323941;
+    
+    border: 1px solid white;
+    
+}
+
+.profile {
+    padding: 2em;
+}
+
+.postcard {
+    margin-bottom: 10px;
+    padding: 1em;
 }
 
 /* new styles */
@@ -47,7 +68,7 @@ a :focus {
 }
 
 .newcolors {
-    background: #171717;
+    background:  #323941;
 }
 
 .greenish {

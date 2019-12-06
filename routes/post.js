@@ -29,11 +29,11 @@ router.post("/", middleware.isLoggedIn, (req, res)=>{
                     console.log(err);
                 } else {
                     user = user[0];
-                    console.log(post);
                     //add username and id to post
                     post.author.id = user._id;
                     post.author.username = user.username;
                     post.author.picture = user.picture;
+                    post.author.name = user.name;
                     post.save();
                     // connect new comment to user
                     user.posts.push(post);

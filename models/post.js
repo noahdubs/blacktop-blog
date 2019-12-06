@@ -11,7 +11,8 @@ var postSchema = new mongoose.Schema({
             ref: "User"
         },
         username: String,
-        picture: String
+        picture: String,
+        name: String
     },
     comments: [
         {

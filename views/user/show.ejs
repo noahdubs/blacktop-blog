@@ -1,53 +1,52 @@
 <%- include ('../partials/header') %>
-<div class="jumbotron jumbotron-fluid newcolors pinkish">
-    <div class="container">
-        <h3><%= name %></h3>
-        <p>@<%= username %></p>
-        <img src="<%= picture %>">
-        <p><%=  bio %></p>
-        <a href="/<%= username %>/edit">Edit Profile</a>
+
+<div class="contianer-fluid">
+    <div class="jumbotron profile-top">
+        <div class="row">
+            <div class="col-md-2 spacing"></div>
+            <div class="col-md-8 content-section profile rounded-lg">
+                <div class="row">
+                    <div class="col-md-4">
+                        <img class="rounded-circle" src="<%= user.picture %>" alt="">
+                    </div>
+                    <div class="col-md-4">
+                        <h3><%= user.name %></h3>
+                        <p>@<%= user.username %></p>
+                        <p><%=  user.bio %></p>
+                    </div>
+                    <div class="col-md-4">
+                        <a class="btn btn-primary" href="/<%= user.username %>/post/new">Add a New Post</a>
+                        <a class="btn btn-warning" href="/<%= user.username %>/edit">Edit your profile</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 spacing"></div>
+        </div>
     </div>
 </div>
 
 <div class="container-fluid black no-padding">
     <div class="row">
-        <div class="col-md-1 spacing"></div>
-        <div class="col-lg-6 middle">
-            <h3><%= username %>'s recent posts</h3>
-            <% posts.forEach((post)=>{ %>
-                <article class="media content-section">
-                    <div class="media-body newcolors">
-                        <div class="article-metadata">
-                            <a href="/<%= username %>"><%= username %></a>
-                            <a href="/<%= username %>/post/<%= post._id %>">See more</a>
+        <div class="col-md-2 spacing"></div>
+        <div class="col-lg-8 middle">
+            <h3>Latest Posts From <%= user.name %></h3>
+            <% user.posts.forEach((post)=>{ %>
+                <div class="card content-section postcard">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <h3 class="card-title"><a href="/<%= user.username %>/post/<%= post._id %>"><%= post.title %></a></h3>
+                            <p class="card-text"><%= post.text %></p>
+                            <p class="card-text"><a href="/<%= user.username %>">By <%= user.username %></a></p>
+                            <p class="card-text"><small class="text-muted">December 5th 2019</small></p>
                         </div>
-                        <p class="article-content"><%= post.text %></p>
+                        <div class="col-md-4">
+                            <img src="<%= post.picture %>" class="card-img">
+                        </div>
                     </div>
-                </article>
+                </div>
             <% }) %>
         </div>
-        <div class="col-md-1 spacing"></div>
-        <div class="col-md-3 left ">
-            <nav class="newcolors">
-                <div class="">
-                    <h3>New Post</h3>
-                </div>
-                <div class="">
-                    <h3>Popular Posts</h3>
-                    <ul class="list-unstyled components">
-                        <li>
-                            <a href="#">Post 1</a>
-                        </li>
-                        <li>
-                            <a href="#">Post 1</a>
-                        </li>
-                        <li>
-                            <a href="#">Post 1</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
+        <div class="col-md-2 spacing"></div>
     </div>
 </div>
 
