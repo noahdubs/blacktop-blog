@@ -10,7 +10,8 @@ var express = require("express"),
 // requiring routes
 var postRoute = require("./routes/post"),
     userRoute = require("./routes/user"),
-    indexRoute = require("./routes/index");
+    indexRoute = require("./routes/index"),
+    commentRoute = require("./routes/comments");
 
 var app = express();
 app.use(bodyParser.urlencoded({extended: true}));
@@ -40,6 +41,7 @@ app.use((req, res, next)=>{
 app.use("/", indexRoute);
 app.use("/", userRoute);
 app.use("/:username/post", postRoute);
+app.use("/:username/post/:id/comments", commentRoute);
 
 
 app.listen(3000, (req, res)=>{

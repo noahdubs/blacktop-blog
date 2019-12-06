@@ -13,6 +13,7 @@ router.get("/:username", ignoreFavicon, (req, res)=>{
             //render user profile template
             var userOne = foundUser[0];
             userInfo = {
+                user : userOne,
                 name : userOne.name,
                 picture: userOne.picure,
                 username: userOne.username,

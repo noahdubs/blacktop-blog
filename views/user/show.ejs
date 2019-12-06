@@ -37,7 +37,7 @@
                     <article class="media content-section">
                         <div class="media-body newcolors">
                             <div class="article-metadata">
-                                <a href="<%= username %>"><%= username %></a>
+                                <a href="/<%= username %>"><%= username %></a>
                                 <a href="/<%= username %>/post/<%= post._id %>">See more</a>
                             </div>
                             <p class="article-content"><%= post.text %></p>
@@ -48,10 +48,14 @@
         <div class="col-lg-3 right">
             <div class="newcolors">
                 <h3>New Post</h3>
-                <form action="/<%= username %>" method="POST">
-                    <input type="textarea" name="post[text]" placeholder="Whats on your mind?">
-                    <button class="btn btn-md">Post</button>
-                </form>
+                <% if(currentUser){ %>
+                    <form action="/<%= currentUser.username %>/post" method="POST">
+                        <input type="textarea" name="post[text]" placeholder="Whats on your mind?">
+                        <button class="btn btn-md">Post</button>
+                    </form>
+                <% } else { %>
+                    <p>Login to post something!</p>
+                <% } %>
             </div>
         </div>
     </div>

@@ -12,6 +12,7 @@
                             <a href="<%= post.author.username %>"><%= post.author.username %></a>
                         </div>
                         <p class="article-content"><%= post.text %></p>
+                        <a class="btb btn-xs btn-warning" href="/<%= post.author %>/post/<%= post._id %>/edit">Edit Post</a>
                         <form action="/<%= post.author %>/post/<%= post._id %>?_method=DELETE" method="POST">
                             <button class="btn btn-xs btn-danger">Click here to delete this post</button>
                         </form>
@@ -42,5 +43,31 @@
         </div>
     </div>
 </div>
+
+<div class="well">
+    <hr>
+    <% post.comments.forEach((comment)=>{ %> 
+        <div class="row">
+            <div class="col-md-12">
+               <strong><%= comment.author.username %></strong>
+               <span class="pull-right">10 days ago</span>
+               <p>
+                    <%= comment.text %>
+               </p> 
+              <!-- edit/delete comment -->
+              <a class="btn btn-xs btn-warning" href="/<%= post.author.username %>/post/<%= post._id %>/comments/<%= comment.id %>/edit">Edit Comment</a>
+              <form action="/<%= post.author.username %>/post/<%= post._id %>/comments/<%= comment.id %>?_method=DELETE" method="POST">
+                <button class="btn btn-xs btn-danger">Delete Comment</button>
+            </form>
+            </div>
+        </div>
+    <% }) %> 
+</div>
+
+<h3>Add new comment to this post:</h3>
+<form action="/<%= post.author.username %>/post/<%= post.id %>/comments" method="POST">
+    <input type="text" name="comment[text]" placeholder="Enter your comment here">
+    <button class="btn btn-success">Submit comment</button>
+</form>
 
 <%- include ('../partials/footer')  %>

@@ -23,19 +23,21 @@ router.post("/", (req, res)=>{
         if(err){
             console.log(err);
         } else {
-            userOne = user[0];
             Post.create(req.body.post, (err, post)=>{
                 if(err){
                     console.log(err);
                 } else {
+                    user = user[0];
+                    console.log(post);
                     //add username and id to post
-                    post.author.id = userOne._id;
-                    post.author.username = userOne.username;
+                    post.author.id = user._id;
+                    post.author.username = user.username;
                     post.save();
+                    console.log(user);
                     // connect new comment to user
-                    userOne.posts.push(post);
-                    userOne.save();
-                    var newRoute = "/" + userOne.username + "/post/" + post._id
+                    user.posts.push(post);
+                    user.save();
+                    var newRoute = "/" + user.username + "/post/" + post._id
                     res.redirect(newRoute);
                 }
             });
@@ -45,7 +47,7 @@ router.post("/", (req, res)=>{
 
 // shows individual post
 router.get("/:id", (req, res)=>{
-    Post.findById(req.params.id, (err, foundPost)=>{
+    Post.findById(req.params.id).populate("comments").exec((err, foundPost)=>{
         if(err){
             console.log(err);
         } else {
@@ -54,6 +56,29 @@ router.get("/:id", (req, res)=>{
         }
     });
 });
+
+// update post form 
+router.get("/:id/edit", (req, res)=>{
+    Post.findById(req.params.id, (err, foundPost)=>{
+        if(err) {
+            console.log(err);
+        } else {
+            res.render("post/edit", {post:foundPost, username:req.params.username});
+        }
+    });
+});
+
+// update post
+router.get("/:id", (req, res)=>{
+    Post.findByIdAndUpdate(req.params.id, req.body.post, (err, updatedPost)=>{
+        if(err) {
+            console.log(err);
+        } else {
+            redt = "/" + req.params.username + "/post/" + req.params.id;
+            res.redirect(redt);
+        }
+    })
+})
 
 // delete post, delete
 router.delete("/:id", (req, res)=>{

@@ -1,0 +1,13 @@
+<%- include ('../partials/header') %>
+<h1>Comment edit form</h1>
+
+<form action="/<%= user %>/post/<%= post_id %>/comments/<%= comm_id %>?_method=PUT" method="POST">
+    <div class="form-group">
+        <input type="text" class="form-control" value="<%= comment.text %>" name="comment[text]">
+    </div>
+    <div class="form-group">
+        <button class="btn btn-lg btn-primary brn-block">Submit</button>
+    </div>
+</form>
+<a href="/<%= user %>/post/<%= post_id %>">Go Back</a>
+<%- include ('../partials/footer')  %>

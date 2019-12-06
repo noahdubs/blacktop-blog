@@ -1,6 +1,9 @@
 var mongoose = require("mongoose");
 
 var postSchema = new mongoose.Schema({
+    title: String,
+    date: String,
+    picture: String,
     text: String,
     author: {
         id: {
@@ -8,7 +11,13 @@ var postSchema = new mongoose.Schema({
             ref: "User"
         },
         username: String
-    }
+    },
+    comments: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Comment"
+        }
+    ]
 });
 
 module.exports = mongoose.model("Post", postSchema);
