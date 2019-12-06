@@ -3,11 +3,12 @@ var router = express.Router({mergeParams: true});
 var User = require("../models/user");
 var Post = require("../models/post");
 var Comment = require("../models/comments");
+var middleware = require("../middleware");
 
 //everything starts with /:username/post/:id/comment
 
 // new comment form
-router.get("/new", (req, res)=>{
+router.get("/new", middleware.isLoggedIn,  (req, res)=>{
     //find post by id
     Post.findById(req.params.id, (err, post)=>{
         if(err){
@@ -19,7 +20,7 @@ router.get("/new", (req, res)=>{
 });
 
 // post route
-router.post("/", (req, res)=>{
+router.post("/", middleware.isLoggedIn, (req, res)=>{
     // lookup post by id
     Post.findById(req.params.id, (err, post)=>{
         if(err){
@@ -46,7 +47,7 @@ router.post("/", (req, res)=>{
 });
 
 // edit get route
-router.get("/:comm_id/edit", (req, res)=>{
+router.get("/:comm_id/edit", middleware.checkCommentOwner, (req, res)=>{
     Comment.findById(req.params.comm_id, (err, foundComment)=>{
         if(err) {
             console.log(err);
@@ -57,7 +58,7 @@ router.get("/:comm_id/edit", (req, res)=>{
 });
 
 // update comment
-router.put("/:comm_id", (req, res)=>{
+router.put("/:comm_id", middleware.checkCommentOwner, (req, res)=>{
     Comment.findByIdAndUpdate(req.params.comm_id, req.body.comment, (err, updatedComment)=>{
         if(err) {
             console.log(err);
@@ -69,7 +70,7 @@ router.put("/:comm_id", (req, res)=>{
 });
 
 // delete comment
-router.delete("/:comm_id", (req, res)=>{
+router.delete("/:comm_id", middleware.checkCommentOwner, (req, res)=>{
     Comment.findByIdAndDelete(req.params.comm_id, (err)=>{
         if(err) {
             console.log(err);

@@ -1,7 +1,24 @@
 <%- include ('../partials/header') %>
-<h1>New Post Form</h1>
+<h1>New Post</h1>
 
-
+<form action="/<%= currentUser.username %>/post" method="POST">
+    <div class="form-group">
+        <label for="">Post Title</label>
+        <input type="text" class="form-control" value="Enter a title" name="post[title]">
+    </div>
+    <div class="form-group">
+        <label for="">Post Content</label>
+        <input type="text" class="form-control" value="Write Your Post Here" name="post[text]">
+    </div>
+    <div class="form-group">
+        <label for="">Post Picture</label>
+        <input type="text" class="form-control" value="Enter an image URL" name="post[picture]">
+    </div> 
+    <div class="form-group">
+        <button class="btn btn-primary">Update</button>
+    </div>
+    <a href="/<%= currentUser.username %>">Go Back</a>
+</form>
    
 
 

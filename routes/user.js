@@ -15,10 +15,11 @@ router.get("/:username", ignoreFavicon, (req, res)=>{
             userInfo = {
                 user : userOne,
                 name : userOne.name,
-                picture: userOne.picure,
+                picture: userOne.picture,
                 username: userOne.username,
                 posts: userOne.posts,
-                userid: userOne._id
+                userid: userOne._id,
+                bio: userOne.bio
             }
             res.render("user/show", userInfo);
         }
@@ -27,7 +28,7 @@ router.get("/:username", ignoreFavicon, (req, res)=>{
 });
 
 // edit profile, get
-router.get("/:username/edit", (req, res)=>{
+router.get("/:username/edit", middleware.checkUser, (req, res)=>{
     User.findByUsername(req.params.username, (err, foundUser)=>{
         if(err) {
             console.log(err);
@@ -38,13 +39,13 @@ router.get("/:username/edit", (req, res)=>{
 });
 
 // update profile, post
-router.put("/:username", (req, res)=>{
+router.put("/:username", middleware.checkUser, (req, res)=>{
     User.find({username:req.params.username}, (err, foundUser)=>{
         if(err) {
             console.log(err)
         } else {
+            console.log(foundUser);
             var userInfo = foundUser[0];
-            console.log(userInfo._id);
             var bodyUser = req.body.user;
             User.findByIdAndUpdate(userInfo._id, bodyUser, (err, userFound)=>{
                 if(err) {
@@ -58,7 +59,7 @@ router.put("/:username", (req, res)=>{
 });
 
 // delete profile, delete
-router.delete("/:username", (req, res)=>{
+router.delete("/:username", middleware.checkUser, (req, res)=>{
     console.log(req.params);
     User.find({username:req.params.username}, (err, foundUser)=>{
         if(err) {

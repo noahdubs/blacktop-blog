@@ -3,6 +3,7 @@ var router = express.Router();
 var passport = require("passport");
 var User = require("../models/user");
 var middleware = require("../middleware");
+var Post = require("../models/post");
 
 // nothing is behind these routes
 
@@ -11,10 +12,21 @@ router.get("/", (req, res)=>{
     res.render('landing');
 });
 
-router.get("/home", middleware.isLoggedIn, (req, res)=>{
-    res.render("home");
+// home route
+router.get("/home", (req, res)=>{
+    Post.find({}, (err, posts)=>{
+        if(err){
+            console.log(err);
+        } else {
+            res.render("home", {posts: posts});
+        }
+    });
 });
 
+// About page route
+router.get("/about", (req, res)=>{
+    res.render("about");
+});
 
 // Auth routes
 // ==============
@@ -23,7 +35,7 @@ router.get("/register", (req, res)=>{
 });
 
 router.post("/register", (req, res)=>{
-    var newUser = new User({username: req.body.username, email: req.body.email, name: req.body.name, picture: req.body.picture});
+    var newUser = new User({username: req.body.username, email: req.body.email, name: req.body.name, picture: req.body.picture, bio:req.body.bio});
     User.register(newUser, req.body.password, (err, user)=>{
         if(err) {
             console.log(err);

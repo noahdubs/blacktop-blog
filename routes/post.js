@@ -1,12 +1,13 @@
 var express = require("express");
 var router = express.Router({mergeParams: true});
-var User = require("../models/user")
-var Post = require("../models/post")
+var User = require("../models/user");
+var Post = require("../models/post");
+var middleware = require("../middleware");
 
 //every route starts with "/:username(username of person)/post"
 
 // form for new post, get
-router.get("/new", (req, res)=>{
+router.get("/new", middleware.isLoggedIn, (req, res)=>{
     User.find({username:req.params.username}, (err, foundUser)=>{
         if(err) {
             console.log(err);
@@ -18,7 +19,7 @@ router.get("/new", (req, res)=>{
 });
 
 // create post under logged in user
-router.post("/", (req, res)=>{
+router.post("/", middleware.isLoggedIn, (req, res)=>{
     User.find({username:req.params.username}, (err, user)=>{
         if(err){
             console.log(err);
@@ -32,8 +33,8 @@ router.post("/", (req, res)=>{
                     //add username and id to post
                     post.author.id = user._id;
                     post.author.username = user.username;
+                    post.author.picture = user.picture;
                     post.save();
-                    console.log(user);
                     // connect new comment to user
                     user.posts.push(post);
                     user.save();
@@ -58,7 +59,7 @@ router.get("/:id", (req, res)=>{
 });
 
 // update post form 
-router.get("/:id/edit", (req, res)=>{
+router.get("/:id/edit", middleware.checkPostOwner, (req, res)=>{
     Post.findById(req.params.id, (err, foundPost)=>{
         if(err) {
             console.log(err);
@@ -69,7 +70,7 @@ router.get("/:id/edit", (req, res)=>{
 });
 
 // update post
-router.get("/:id", (req, res)=>{
+router.get("/:id", middleware.checkPostOwner, (req, res)=>{
     Post.findByIdAndUpdate(req.params.id, req.body.post, (err, updatedPost)=>{
         if(err) {
             console.log(err);
@@ -81,7 +82,7 @@ router.get("/:id", (req, res)=>{
 })
 
 // delete post, delete
-router.delete("/:id", (req, res)=>{
+router.delete("/:id", middleware.checkPostOwner, (req, res)=>{
     // find post and delete
     Post.findByIdAndDelete(req.params.id, (err)=>{
         if(err) {

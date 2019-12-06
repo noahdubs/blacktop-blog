@@ -28,7 +28,7 @@
             <ul class="navbar-nav navbar-right l-space">
                 <!-- About -->
                 <li class="nav-item">
-                    <a href="#" class="nav-link light">About</a>
+                    <a href="/about" class="nav-link light">About</a>
                 </li>
             </ul>
             <ul class="navbar-nav navbar-right l-space">
@@ -53,4 +53,18 @@
             </ul>
         </div>
     </nav>
+
+    <div class="container">
+        <% if(error && error.length > 0){ %>
+            <div class="alert alert-danger">
+                <%= error %>
+            </div>
+        <% } %>
+        <% if(success && success.length > 0) { %>
+            <div class="alert alert-success">
+                <%= success %>
+            </div>
+        <% } %>
+    </div>
+
 

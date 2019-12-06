@@ -1,48 +1,38 @@
 <%- include ('../partials/header') %>
 
-
-
 <div class="container-fluid black no-padding">
-    <div class="row">
-       <div class="col-md-1 spacing"></div>
-        <div class="col-md-6 middle">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8 spacing">
                 <article class="media content-section space-top">
                     <div class="media-body newcolors">
                         <div class="article-metadata">
-                            <a href="<%= post.author.username %>"><%= post.author.username %></a>
+                            <h1><%= post.title %></h1>
+                            <div class="row">
+                                <div class="col-4">
+                                    <img src="<%= post.author.picture %>" alt="">
+                                </div>
+                                <div class="col-8">
+                                    <h4><%= post.author.name %></h4>
+                                    <a href="/<%= post.author.username %>"><%= post.author.username %></a>
+                                </div>
+                            </div>
+                            <img src="<%= post.picture %>">
+                            
                         </div>
                         <p class="article-content"><%= post.text %></p>
                         <a class="btb btn-xs btn-warning" href="/<%= post.author %>/post/<%= post._id %>/edit">Edit Post</a>
-                        <form action="/<%= post.author %>/post/<%= post._id %>?_method=DELETE" method="POST">
+                        <form action="/<%= post.author.username %>/post/<%= post._id %>?_method=DELETE" method="POST">
                             <button class="btn btn-xs btn-danger">Click here to delete this post</button>
                         </form>
                     </div>
                 </article>
-        </div>
-        <div class="col-md-1 spacing"></div>
-        <div class="col-md-3 left ">
-            <nav class="newcolors">
-                <div class="">
-                    <h3>New Post</h3>
-                </div>
-                <div class="">
-                    <h3>Popular Posts</h3>
-                    <ul class="list-unstyled components">
-                        <li>
-                            <a href="#">Post 1</a>
-                        </li>
-                        <li>
-                            <a href="#">Post 1</a>
-                        </li>
-                        <li>
-                            <a href="#">Post 1</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
+            </div>
+            <div class="col-md-2"></div>
         </div>
     </div>
 </div>
+
 
 <div class="well">
     <hr>
