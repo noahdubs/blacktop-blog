@@ -1,0 +1,47 @@
+body, html {
+    background: #171717;
+    color: #D0D0D0;
+    height: 100%;
+}
+.whole {
+    height: 100%;
+}
+.right {
+    background: #252527;
+    height: 100%;
+    align-items: center;
+}
+
+#headingGroup h2 {
+    font-size: 2rem;
+}
+.centered{
+    padding-left: 10em;
+}
+
+.headings {
+    padding-bottom: .5em;
+}
+
+.borders {
+    border-left: 2px solid #19B1FD;
+}
+/* buttons */
+.button {
+    display: block;
+    margin-bottom: 1.5em;
+    width: 20em;
+    height: 2em;
+    font-weight: 600;
+    
+}
+
+.register {
+    background: #19B1FD;
+    color: #D0D0D0;
+}
+
+.sign-up {
+    background: #D0D0D0;
+    color: #19B1FD;
+}
