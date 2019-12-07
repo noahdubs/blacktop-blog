@@ -12,8 +12,8 @@
     <title>Test Site</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-md navbar-dark navbar-custom">
-        <a href="/home" class="navbar-brand"><i class="far fa-newspaper"></i> PostMania</a>
+    <nav class="navbar fixed-top navbar-expand-md navbar-dark navbar-custom">
+        <a href="/home" class="navbar-brand" id="brand"><i class="far fa-newspaper"></i> PostMania</a>
         <button class="navbar-toggler border" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon toggler"></span>
         </button> 
@@ -26,12 +26,14 @@
                     <a href="/home" class="nav-link light"><i class="fas fa-home"></i> Home</a>
                 </li>
             </ul>
-            <ul class="navbar-nav navbar-right l-space">
-                <!-- About -->
-                <li class="nav-item">
-                    <a href="/about" class="nav-link light"><i class="fas fa-poll-h"></i> About</a>
-                </li>
-            </ul>
+            <% if(currentUser){ %>
+                <ul class="navbar-nav navbar-right l-space">
+                    <!-- About -->
+                    <li class="nav-item">
+                        <a href="/<%= currentUser.username %>/post/new" class="nav-link light"><i class="fas fa-edit"></i> New Post</a>
+                    </li>
+                </ul>
+            <% } %>
             <ul class="navbar-nav navbar-right l-space">
                 <!-- Login/Profile -->        
                 <li class="nav-item">

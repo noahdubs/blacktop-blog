@@ -1,7 +1,7 @@
 <%- include ('./partials/header') %>
 
 
-<div class="container-fluid content-back">
+<div class="container-fluid content-back need-more-space">
     <div class="row">
         <div class="col-md-2 spacing"></div>
         <div class="col-md-8 middle">
@@ -13,10 +13,9 @@
                             <a href="/<%= post.author.username %>/post/<%= post._id %>" class="post-title"><h3 class="card-title"><%= post.title %></h3></a>
                             <a href="/<%= post.author.username %>/post/<%= post._id %>" class="post-title"><p class="card-text partial-post"><%= post.text %></p></a>
                             <p class="card-text"><a href="/<%= post.author.username %>"class="post-title">By <%= post.author.username %></a></p>
-                            <p class="card-text"><small class="text-muted">December 5th 2019</small></p>
                         </div>
                         <div class="col-md-4">
-                            <img src="<%= post.picture %>" class="card-img">
+                            <a href="/<%= post.author.username %>/post/<%= post._id %>"><img src="<%= post.picture %>" class="card-img"></a>
                         </div>
                     </div>
                 </div>

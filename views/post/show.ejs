@@ -1,6 +1,6 @@
 <%- include ('../partials/header') %>
 
-<div class="container-fluid content-back one-post-cont">
+<div class="container-fluid content-back one-post-cont need-more-space">
     <div class="row">
         <div class="col-md-2"></div>
         <div class="col-md-8 content-section">
@@ -10,20 +10,20 @@
                     <div class="card dark">
                         <!-- title/ author -->
                         <div class="card-body">
-                            <h2 class="card-title"><%= post.title %></h2>
+                            <h2 class="card-title title"><%= post.title %></h2>
                             <div class="row">
                                 <div class="col-md-2">
                                     <% if(post.author.picture){ %>
-                                        <img class="rounded-circle thumbnail" src="<%= post.author.picture %>" alt="">
+                                        <a href="/<%= post.author.username %>"><img class="rounded-circle thumbnail" src="<%= post.author.picture %>" alt=""></a>
                                     <% } else { %>
-                                        <img class="rounded-circle thumbnail" src="https://i.stack.imgur.com/34AD2.jpg">
+                                        <a href="/<%= post.author.username %>"><img class="rounded-circle thumbnail" src="https://i.stack.imgur.com/34AD2.jpg"></a>
                                     <% } %>
                                 </div>
-                                <div class="col-md-8">
-                                    <h4><%= post.author.name %></h4>
-                                    <p><%= post.author.username %></p>
+                                <div class="col-md-7">
+                                    <a href="/<%= post.author.username %>"><h4><%= post.author.name %></h4></a>
+                                    <a href="/<%= post.author.username %>" class="post-title"> <p><%= post.author.username %></p></a>
                                 </div>
-                                <div class="col-md-2">
+                                <div class="col-md-3">
                                     <% if(currentUser && post.author.username === currentUser.username){ %>
                                         <div class="dropdown">
                                             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -37,7 +37,6 @@
                                             </div>
                                         </div>
                                     <% } %>
-                                    <p>December 5th 2019</p>
                                 </div>
                             </div>
                         </div>

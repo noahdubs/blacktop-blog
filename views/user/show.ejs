@@ -1,17 +1,17 @@
 <%- include ('../partials/header') %>
 
-<div class="">
+<div class="need-space">
     <div class="jumbotron profile-top">
         <div class="row">
             <div class="col-lg-2 spacing"></div>
             <div class="col-lg-8 content-section profile rounded-lg">
                 <div class="row">
                     <div class="col-md-4">
-                        <% if(user.picture){ %>
-                            <img class="rounded-circle picture" src="<%= user.picture %>" alt="">
-                        <% } else { %>
-                            <img class="rounded-circle picture" src="https://i.stack.imgur.com/34AD2.jpg">
-                        <% } %>
+                            <% if(!user.picture){ %>
+                                <img class="rounded-circle picture" src="https://i.stack.imgur.com/34AD2.jpg">
+                            <% } else { %>
+                                <img class="rounded-circle picture" src="<%= user.picture %>" alt="">
+                            <% } %>
                     </div>
                     <div class="col-md-4">
                         <h3><%= user.name %></h3>
@@ -53,9 +53,8 @@
                             <h3 class="card-title"><a class="post-title" href="/<%= user.username %>/post/<%= post._id %>"><%= post.title %></a></h3>
                             <a href="/<%= user.username %>/post/<%= post._id %>" class="post-title"><p class="card-text partial-post"><%= post.text %></p></a> 
                             <p class="card-text"><a class="post-title" href="/<%= user.username %>">By <%= user.username %></a></p>
-                            <p class="card-text"><small class="text-muted">December 5th 2019</small></p>
                             <% if(currentUser && user.username === currentUser.username){ %>
-                                <div class="dropdown">
+                                <div class="dropdown edit-post">
                                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <i class="fas fa-cog"></i>
                                     </button>

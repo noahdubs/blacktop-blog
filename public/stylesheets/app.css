@@ -54,8 +54,8 @@ body {
     
     border-top: 2px solid #19B1FD;
     border-left: 2px solid #19B1FD;
-    border-bottom: 2px solid #868686;
-    border-right: 2px solid #868686;
+    border-bottom: 2px solid #636363;
+    border-right: 2px solid #636363;
     /* border-left: 2px solid #868686;
     border-right: 2px solid #868686; */
     /* border-bottom: 1px solid #1CFC1C; */
@@ -164,15 +164,24 @@ a :focus {
 
 /* navbar link colors */
 .light {
-    color: #a5a5a5;
-    background: #252527;
+    color: #D0D0D0;
     position: relative;
     display: block;
     margin:0;
     padding-right: 30px;
     padding-left: 30px;
-    
-
+}
+#brand {
+    color: #D0D0D0;
+    padding: 10px;
+}
+#brand:hover{
+    color: #D0D0D0;
+    background: #171717;
+}
+#brand:focus {
+    color: #D0D0D0;
+    background: #171717;
 }
 
 /* remove li dot */
@@ -183,13 +192,13 @@ a :focus {
 
 /* hover bug */
 .light:focus {
-    background-color: #1E1E1E;
-    color:#a5a5a5;
+    background-color: #171717;
+    color:#D0D0D0;
     text-decoration: none;
 }
 .light:hover{
-    background-color: #1E1E1E;
-    color: #a5a5a5;
+    background-color: #171717;
+    color: #D0D0D0;
     text-decoration: none;
 }
 
@@ -259,4 +268,21 @@ a :focus {
     border-top: 2px solid #19B1FD;
     padding-top: 2em;
     padding-bottom: 2em;
+}
+
+.need-space {
+    margin-top: 4em;
+}
+
+.need-more-space {
+    margin-top: 7em;
+}
+
+.edit-post {
+    float: left;
+}
+
+.title {
+    padding: 1em;
+    text-align: center;
 }
