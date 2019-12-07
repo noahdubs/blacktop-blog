@@ -45,13 +45,13 @@
     <div class="row">
         <div class="col-md-2 spacing"></div>
         <div class="col-lg-8 middle">
-            <h3>Latest Posts From <%= user.name %></h3>
+            <h3 class="latest">Latest Posts From <%= user.name %></h3>
             <% user.posts.forEach((post)=>{ %>
                 <div class="card content-section postcard">
                     <div class="row">
                         <div class="col-md-8">
-                            <h3 class="card-title"><a class="post-title" href="/<%= user.username %>/post/<%= post._id %>"><%= post.title %></a></h3>
-                            <a href="/<%= user.username %>/post/<%= post._id %>" class="post-title"><p class="card-text partial-post"><%= post.text %></p></a> 
+                            <h3 class="card-title"><a class="post-title posted" href="/<%= user.username %>/post/<%= post._id %>"><%= post.title %></a></h3>
+                            <a href="/<%= user.username %>/post/<%= post._id %>" class="post-title"><p class="card-text partial-post"><%= post.text %>...</p></a> 
                             <p class="card-text"><a class="post-title" href="/<%= user.username %>">By <%= user.username %></a></p>
                             <% if(currentUser && user.username === currentUser.username){ %>
                                 <div class="dropdown edit-post">

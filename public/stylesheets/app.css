@@ -1,7 +1,11 @@
 body {
     background: #171717;
     color: #D0D0D0;
-    font-family: 'Roboto', sans-serif;
+    /* font-family: 'Roboto', sans-serif; */
+    font-family: 'Lato', sans-serif;
+}
+.logo {
+    font-size: 25px;
 }
 .thumbnail {
     border: 1px solid #19B1FD; /* Gray border */
@@ -165,6 +169,7 @@ a :focus {
 /* navbar link colors */
 .light {
     color: #D0D0D0;
+    font-size: 16px;
     position: relative;
     display: block;
     margin:0;
@@ -207,7 +212,10 @@ a :focus {
     padding:0;
 }
 
-
+.posted {
+    border-bottom: 1px solid #636363;
+    padding-bottom: .25em;
+}
 
 /* form classes */
 .form {
@@ -242,22 +250,21 @@ a :focus {
     float: right;
 }
 
-.partial-post {
-    height: 40px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    padding-bottom: 5em;
-}
-
 .dark {
     background: #252527;
     border: none;
 }
-
+.partial-post {
+    padding-top: 1em;
+    padding-bottom: 6em;
+    font-size: 18px;
+}
+.no-pad {
+    padding: 0;
+}
 .comments {
     padding-top: 1em;
-    border-bottom: 2px solid #19B1FD;
+    border-top: 2px solid #19B1FD;
 }
 
 .username-display {
@@ -285,4 +292,10 @@ a :focus {
 .title {
     padding: 1em;
     text-align: center;
+}
+
+.latest {
+    padding-bottom: 10px;
+    border-bottom: 2px solid #636363;
+    margin-bottom: 1em;
 }

@@ -1,7 +1,42 @@
-<%- include ('./partials/header') %>
-<link rel="stylesheet" href="/stylesheets/app.css">
-<h1>Landing Page</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" type="text/css"> 
+    <link rel="stylesheet" href="/stylesheets/landing.css" type="text/css">
 
-<%- include ('./partials/footer')  %>
+    <title>Blacktop Blog</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg custom">
+        <a href="/" class="navbar-brand logo"><i class="fas fa-road"></i> Blacktop Blog</a>
+    </nav>
+    <div class="row left side">
+        <div class="col-md-2"></div>
+        <div class="col-md-8 middle">
+            <h2 class="three"><i class="fas fa-users"></i> See what people are saying.</h2>
+            <h2 class="three"><i class="far fa-clock"></i> Keep up to date.</h2>
+            <h2 class="three"><i class="far fa-comments"></i> Join the conversation.</h2>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+    <div class="row right side">
+        <div class="col-md-3"></div>
+        <div class="col-md-6 middle">
+            <h2 class="talk">See what all the talk is about.</h2>
+            <h4>Join today.</h4>
+            <a class="btn button register" href="/register">Sign up</a>
+            <a class="btn button sign-up" href="/login">Log in</a>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+
+    
+</body>
+</html>
 
 

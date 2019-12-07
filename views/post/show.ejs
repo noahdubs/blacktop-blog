@@ -48,7 +48,7 @@
                         </div>
                         <!-- Add new comment -->
                         <div class="new-comment">
-                            <h2 class="register">Add new comment to this post:</h2>
+                            <h3 class="latest">Add new comment to this post:</h3>
                             <form action="/<%= post.author.username %>/post/<%= post.id %>/comments" method="POST">
                                 <div class="form-group">
                                     <label for="comment">New Comment:</label>
@@ -61,7 +61,7 @@
                         </div>
                         
                         <!-- Comments -->
-                        <h2 class="register">All Comments</h2>
+                        <h3 class="latest">All Comments</h3>
                         <% post.comments.forEach((comment)=>{ %>
                             <div class="card dark comments">
                                 <div class="row">
