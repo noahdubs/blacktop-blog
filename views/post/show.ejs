@@ -1,5 +1,4 @@
 <%- include ('../partials/header') %>
-
 <div class="container-fluid content-back one-post-cont need-more-space">
     <div class="row">
         <div class="col-md-2"></div>
@@ -40,7 +39,6 @@
                                 </div>
                             </div>
                         </div>
-        
                         <!-- Picture / text -->
                         <img class="card-picture" src="<%= post.picture %>" alt="">
                         <div class="card-body">
@@ -59,7 +57,6 @@
                                 </div>
                             </form>
                         </div>
-                        
                         <!-- Comments -->
                         <h3 class="latest">All Comments</h3>
                         <% post.comments.forEach((comment)=>{ %>

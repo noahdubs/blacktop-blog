@@ -88,8 +88,6 @@ body {
     padding-top: 2em;
 }
 
-
-
 a :focus {
     color: #19B1FD;
     background: #0e0e0e;
@@ -109,49 +107,9 @@ a :focus {
     margin: 0;
 }
 
-.media {
-    margin-top: 0;
-}
-
-
-.wrapper {
-    display: flex;
-    width: 100%;
-    align-items: stretch;
-}
 
 #sidebar {
    width: 100%;
-}
-
-.newcolors {
-    background:  #323941;
-}
-
-.greenish {
-    border-top: 1px solid #4DFF31;
-}
-
-.orange {
-    border-bottom: 1px solid #FF5D00;
-}
-
-.spaced {
-    margin: 0;
-    padding-top: 1em;
-    padding-bottom: 1em;
-}
-
-.yellow {
-    border-bottom: 1px solid #FFDD00;
-}
-
-.purple {
-    border-bottom: 1px solid #7800FF;
-}
-
-.col-md-4 {
-    padding: 0;
 }
 
 .form-control {
@@ -160,9 +118,6 @@ a :focus {
     border: 2px solid #212121;
 }
 
-.pinkish {
-    border-bottom: 1px solid #FF4242;
-}
 
 /* New navbar styles, remove li dot */
 .nav-item .nav-link .nav-item:hover {
