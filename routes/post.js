@@ -88,7 +88,7 @@ router.delete("/:id", middleware.checkPostOwner, (req, res)=>{
         if(err) {
             res.redirect("/");
         } else {
-            res.redirect("/");
+            res.redirect("/back");
         }
     });
 });

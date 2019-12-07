@@ -35,7 +35,6 @@ router.put("/:username", middleware.checkUser, (req, res)=>{
         if(err) {
             console.log(err)
         } else {
-            console.log(foundUser);
             var userInfo = foundUser[0];
             var bodyUser = req.body.user;
             User.findByIdAndUpdate(userInfo._id, bodyUser, (err, userFound)=>{

@@ -20,7 +20,7 @@
                                     <% } %>
                                 </div>
                                 <div class="col-md-7">
-                                    <a href="/<%= post.author.username %>"><h4><%= post.author.name %></h4></a>
+                                    <a href="/<%= post.author.username %>" class="post-title"><h4><%= post.author.name %></h4></a>
                                     <a href="/<%= post.author.username %>" class="post-title"> <p><%= post.author.username %></p></a>
                                 </div>
                                 <div class="col-md-3">
@@ -42,7 +42,7 @@
                         </div>
         
                         <!-- Picture / text -->
-                        <img src="<%= post.picture %>" alt="">
+                        <img class="card-picture" src="<%= post.picture %>" alt="">
                         <div class="card-body">
                             <p><%= post.text %></p>
                         </div>
@@ -55,7 +55,7 @@
                                     <input class="form-control control"type="text" name="comment[text]" placeholder="Enter your comment here">
                                 </div>
                                 <div class="form-group">
-                                    <button class="btn btn-dark">Submit comment</button>
+                                    <button class="btn btn-primary">Submit comment</button>
                                 </div>
                             </form>
                         </div>

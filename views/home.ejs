@@ -12,7 +12,8 @@
                         <div class="col-md-8 no-pad">
                             <h3 class="card-title"><a class="post-title posted" href="/<%= post.author.username %>/post/<%= post._id %>"><%= post.title %></a></h3>
                             <a href="/<%= post.author.username %>/post/<%= post._id %>" class="post-title"><p class="card-text partial-post"><%= post.text %>...</p></a>
-                            <p class="card-text"><a href="/<%= post.author.username %>"class="post-title">By <%= post.author.username %></a></p>
+                            <p class="card-text"><a href="/<%= post.author.username %>"class="post-title">Submitted by: <%= post.author.name %></a></p>
+                            <p class="card-text"><a href="/<%= post.author.username %>"class="post-title">@<%= post.author.username %></a></p>
                         </div>
                         <div class="col-md-4">
                             <a href="/<%= post.author.username %>/post/<%= post._id %>"><img src="<%= post.picture %>" class="card-img"></a>

@@ -15,7 +15,11 @@ body {
 }
 .picture {
     border: 1px solid #19B1FD;
-    padding: 5px
+    padding: 5px;
+    max-width: 90%;
+}
+.card-picture {
+    height: 300px;
 }
 .comment-thumbnail {
     width: 50px;
@@ -214,7 +218,6 @@ a :focus {
 
 .posted {
     border-bottom: 1px solid #636363;
-    padding-bottom: .25em;
 }
 
 /* form classes */
