@@ -21,8 +21,7 @@ app.use(express.static(__dirname+"/public"));
 app.use(methodOverride("_method"));
 app.use(flash());
 
-//, useUnifiedTopology: true
-mongoose.connect("mongodb://localhost:27017/blog", {useNewUrlParser: true});
+mongoose.connect("mongodb://localhost:27017/blog", {useNewUrlParser: true, useUnifiedTopology: true});
 
 //passport config
 app.use(require("express-session")({
