@@ -21,7 +21,7 @@ app.use(express.static(__dirname+"/public"));
 app.use(methodOverride("_method"));
 app.use(flash());
 
-mongoose.connect("mongodb+srv://noahdubs:Xn87xn87$@cluster0-zoobp.mongodb.net/test?retryWrites=true&w=majority", {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect("mongodb+srv://noahdubs:passkey$@cluster0-zoobp.mongodb.net/test?retryWrites=true&w=majority", {useNewUrlParser: true, useUnifiedTopology: true});
 //"mongodb://localhost:27017/blog"
 //passport config
 app.use(require("express-session")({
