@@ -1,57 +1,117 @@
 <%- include ('../partials/header') %>
 
-<div class="container-fluid">
+<div class="container-fluid content-back one-post-cont">
     <div class="row">
         <div class="col-md-2"></div>
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-body">
-                    <h2 class="card-title"><%= post.title %></h2>
-                <div class="row">
-                    <div class="col-md-2">
-                        <img src="<%= post.author.picture %>" class="rounded-circle article-img">
-                    </div>
-                    <div class="col-md-8">
-                        <h4><%= post.author.name %></h4>
-                        <p><%= post.author.username %></p>
-                    </div>
-                    <div class="col-md-2">
-                        <p>December 5th 2019</p>
-                    </div>
+        <div class="col-md-8 content-section">
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-10 dark">
+                    <div class="card dark">
+                        <!-- title/ author -->
+                        <div class="card-body">
+                            <h2 class="card-title"><%= post.title %></h2>
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <% if(post.author.picture){ %>
+                                        <img class="rounded-circle thumbnail" src="<%= post.author.picture %>" alt="">
+                                    <% } else { %>
+                                        <img class="rounded-circle thumbnail" src="https://i.stack.imgur.com/34AD2.jpg">
+                                    <% } %>
+                                </div>
+                                <div class="col-md-8">
+                                    <h4><%= post.author.name %></h4>
+                                    <p><%= post.author.username %></p>
+                                </div>
+                                <div class="col-md-2">
+                                    <% if(currentUser && post.author.username === currentUser.username){ %>
+                                        <div class="dropdown">
+                                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class="fas fa-cog"></i>
+                                            </button>
+                                            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                                <a class="dropdown-item" href="/<%= currentUser.username %>/post/<%= post._id %>/edit">Edit this post <i class="fas fa-edit"></i></a>
+                                                <form action="/<%= currentUser.username %>/post/<%= post._id %>?_method=DELETE" method="POST">
+                                                    <button class="dropdown-item">Delete this post <i class="fas fa-trash"></i></button>
+                                                </form> 
+                                            </div>
+                                        </div>
+                                    <% } %>
+                                    <p>December 5th 2019</p>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <!-- Picture / text -->
+                        <img src="<%= post.picture %>" alt="">
+                        <div class="card-body">
+                            <p><%= post.text %></p>
+                        </div>
+                        <!-- Add new comment -->
+                        <div class="new-comment">
+                            <h2 class="register">Add new comment to this post:</h2>
+                            <form action="/<%= post.author.username %>/post/<%= post.id %>/comments" method="POST">
+                                <div class="form-group">
+                                    <label for="comment">New Comment:</label>
+                                    <input class="form-control control"type="text" name="comment[text]" placeholder="Enter your comment here">
+                                </div>
+                                <div class="form-group">
+                                    <button class="btn btn-dark">Submit comment</button>
+                                </div>
+                            </form>
+                        </div>
+                        
+                        <!-- Comments -->
+                        <h2 class="register">All Comments</h2>
+                        <% post.comments.forEach((comment)=>{ %>
+                            <div class="card dark comments">
+                                <div class="row">
+                                    <div class="col-md-1">
+                                        <a href="/<%= comment.author.username %>"><img src="<%= comment.author.picture %>" class="rounded-circle comment-thumbnail"></a>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <a href="/<%= comment.author.username %>" class="post-title"><strong><%= comment.author.name %></strong></a>
+                                        <a href="/<%= comment.author.username %>" class="post-title"><p class="username-display"><%= comment.author.username %></p></a>
+                                    </div>
+                                    <div class="col-md-7">
+                                        <p><%= comment.text %></p>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <!-- edit/delete comment -->
+                                        <% if(currentUser && comment.author.username === currentUser.username){ %>
+                                            <div class="dropdown">
+                                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <i class="fas fa-cog"></i>
+                                                </button>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                                    <a class="dropdown-item" href="/<%= post.author.username %>/post/<%= post._id %>/comments/<%= comment.id %>/edit">Edit Comment <i class="fas fa-edit"></i></a>
+                                                    <form action="/<%= post.author.username %>/post/<%= post._id %>/comments/<%= comment.id %>?_method=DELETE" method="POST">
+                                                        <button class="dropdown-item">Delete Comment <i class="fas fa-trash"></i></button>
+                                                    </form> 
+                                                </div>
+                                            </div>
+                                        <% } %>
+                                    </div>
+                                </div>
+                            </div>
+                        <% }) %>
+                    </div> 
                 </div>
-                </div>
+                <div class="col-md-1"></div>
             </div>
+            
         </div>
         <div class="col-md-2"></div>
     </div>
-    
 </div>
 
 
-<div class="well">
-    <hr>
-    <% post.comments.forEach((comment)=>{ %> 
-        <div class="row">
-            <div class="col-md-12">
-               <strong><%= comment.author.username %></strong>
-               <span class="pull-right">10 days ago</span>
-               <p>
-                    <%= comment.text %>
-               </p> 
-              <!-- edit/delete comment -->
-              <a class="btn btn-xs btn-warning" href="/<%= post.author.username %>/post/<%= post._id %>/comments/<%= comment.id %>/edit">Edit Comment</a>
-              <form action="/<%= post.author.username %>/post/<%= post._id %>/comments/<%= comment.id %>?_method=DELETE" method="POST">
-                <button class="btn btn-xs btn-danger">Delete Comment</button>
-            </form>
-            </div>
-        </div>
-    <% }) %> 
-</div>
 
-<h3>Add new comment to this post:</h3>
-<form action="/<%= post.author.username %>/post/<%= post.id %>/comments" method="POST">
-    <input type="text" name="comment[text]" placeholder="Enter your comment here">
-    <button class="btn btn-success">Submit comment</button>
-</form>
+
+
+
+
+
+
 
 <%- include ('../partials/footer')  %>

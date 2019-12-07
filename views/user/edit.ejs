@@ -1,34 +1,42 @@
 <%- include ('../partials/header') %>
 
-<form action="/<%= user.username %>?_method=PUT" method="POST">
-    <div class="container center">
-        <h1>Edit your profile</h1>
-        <div class="form-group">
-            <label for="email">Email Address</label>
-            <input type="email" class="form-control " name="user[email]" aria-describedby="emailHelp" value="<%= user.email %>">
-            <small class="form-text text-muted">We'll never share your email with anyone else.</small>
-        </div>
-        <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" class="form-control" name="user[name]" placeholder="Enter your name" value="<%= user.name %>">
-        </div>
-        <div class="form-group">
-            <label for="username">Username</label>
-            <input type="text" class="form-control" name="user[username]" placeholder="Enter a unique username" value="<%= user.username %>">
-        </div>
-        <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" class="form-control" name="user[password]" placeholder="Enter a unique password">
-        </div>
-        <div class="form-group">
-            <label for="profilepic">Pick a profile picture</label>
-            <input type="text" name="user[picture]" class="form-control" class="form-control" placeholder="Enter Image URL" value="<%= user.picture %>">
-        </div>  
-        <div class="form-group">
-            <label for="bio">Tell us about yourself, this will be displayed on your profile</label>
-            <input type="text" name="user[bio]" class="form-control" class="form-control" placeholder="Enter bio" value="<%= user.bio %>">
-        </div>     
-        <button class="btn btn-primary">Register</button>
+
+
+<div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+        <form action="/<%= user.username %>?_method=PUT" method="POST">
+            <div class="container center form">
+                <h2 class="register">Edit your profile</h2>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" class="form-control control" name="user[email]" aria-describedby="emailHelp" value="<%= user.email %>">
+                    <small class="form-text text-muted">We'll never share your email with anyone else.</small>
+                </div>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control control" name="user[name]" placeholder="Enter your name" value="<%= user.name %>">
+                </div>
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" class="form-control control" name="user[username]" placeholder="Enter a unique username" value="<%= user.username %>">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control control" name="user[password]" placeholder="Enter a unique password">
+                </div>
+                <div class="form-group">
+                    <label for="profilepic">Pick a profile picture</label>
+                    <input type="text" name="user[picture]" class="form-control control" class="form-control" placeholder="Enter Image URL" value="<%= user.picture %>">
+                </div>  
+                <div class="form-group">
+                    <label for="bio">Tell us about yourself, this will be displayed on your profile</label>
+                    <input type="text" name="user[bio]" class="form-control control" class="form-control" placeholder="Enter bio" value="<%= user.bio %>" rows="5">
+                </div>     
+                <button class="btn btn-lg btn-primary">Submit</button>
+            </div>
+        </form>
     </div>
-</form>
+    <div class="col-md-3"></div>
+</div>
 <%- include ('../partials/footer')  %>

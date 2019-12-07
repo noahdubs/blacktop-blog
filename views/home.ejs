@@ -1,18 +1,18 @@
 <%- include ('./partials/header') %>
 
 
-<div class="container-fluid black no-padding">
+<div class="container-fluid content-back">
     <div class="row">
         <div class="col-md-2 spacing"></div>
         <div class="col-md-8 middle">
             <h3>Home</h3>
             <% posts.forEach((post)=>{ %>
-                <div class="card">
+                <div class="card content-section postcard">
                     <div class="row">
                         <div class="col-md-8">
-                            <h3 class="card-title"><%= post.title %></h3>
-                            <p class="card-text"><%= post.text %></p>
-                            <p class="card-text"><a href="/<%= post.author.username %>">By <%= post.author.username %></a></p>
+                            <a href="/<%= post.author.username %>/post/<%= post._id %>" class="post-title"><h3 class="card-title"><%= post.title %></h3></a>
+                            <a href="/<%= post.author.username %>/post/<%= post._id %>" class="post-title"><p class="card-text partial-post"><%= post.text %></p></a>
+                            <p class="card-text"><a href="/<%= post.author.username %>"class="post-title">By <%= post.author.username %></a></p>
                             <p class="card-text"><small class="text-muted">December 5th 2019</small></p>
                         </div>
                         <div class="col-md-4">

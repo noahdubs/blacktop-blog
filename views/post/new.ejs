@@ -1,25 +1,29 @@
 <%- include ('../partials/header') %>
-<h1>New Post</h1>
 
-<form action="/<%= currentUser.username %>/post" method="POST">
-    <div class="form-group">
-        <label for="">Post Title</label>
-        <input type="text" class="form-control" value="Enter a title" name="post[title]">
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8 form">
+        <h2 class="register">New Post</h2>
+        <form action="/<%= currentUser.username %>/post" method="POST">
+            <div class="form-group">
+                <label for="">Post Title</label>
+                <input type="text" class="form-control control" value="Enter a title" name="post[title]">
+            </div>
+            <div class="form-group">
+                <label for="">Post Picture</label>
+                <input type="text" class="form-control control" value="Enter an image URL" name="post[picture]">
+            </div> 
+            <div class="form-group">
+                <label for="">Post Content</label>
+                <textarea type="text" class="form-control control" value="Write Your Post Here" name="post[text]" rows="10"></textarea>
+            </div>
+            
+            <div class="form-group">
+                <button class="btn btn-lg btn-primary">Post</button>
+            </div>
+            <a href="/<%= currentUser.username %>">Go Back</a>
+        </form>
     </div>
-    <div class="form-group">
-        <label for="">Post Content</label>
-        <input type="text" class="form-control" value="Write Your Post Here" name="post[text]">
-    </div>
-    <div class="form-group">
-        <label for="">Post Picture</label>
-        <input type="text" class="form-control" value="Enter an image URL" name="post[picture]">
-    </div> 
-    <div class="form-group">
-        <button class="btn btn-primary">Update</button>
-    </div>
-    <a href="/<%= currentUser.username %>">Go Back</a>
-</form>
-   
-
-
+    <div class="col-md-2"></div>
+</div>
 <%- include ('../partials/footer')  %>

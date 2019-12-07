@@ -70,7 +70,7 @@ router.get("/:id/edit", middleware.checkPostOwner, (req, res)=>{
 });
 
 // update post
-router.get("/:id", middleware.checkPostOwner, (req, res)=>{
+router.put("/:id", middleware.checkPostOwner, (req, res)=>{
     Post.findByIdAndUpdate(req.params.id, req.body.post, (err, updatedPost)=>{
         if(err) {
             console.log(err);

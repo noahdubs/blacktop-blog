@@ -1,13 +1,17 @@
 <%- include ('../partials/header') %>
 
-<div class="contianer-fluid">
+<div class="">
     <div class="jumbotron profile-top">
         <div class="row">
-            <div class="col-md-2 spacing"></div>
-            <div class="col-md-8 content-section profile rounded-lg">
+            <div class="col-lg-2 spacing"></div>
+            <div class="col-lg-8 content-section profile rounded-lg">
                 <div class="row">
                     <div class="col-md-4">
-                        <img class="rounded-circle" src="<%= user.picture %>" alt="">
+                        <% if(user.picture){ %>
+                            <img class="rounded-circle picture" src="<%= user.picture %>" alt="">
+                        <% } else { %>
+                            <img class="rounded-circle picture" src="https://i.stack.imgur.com/34AD2.jpg">
+                        <% } %>
                     </div>
                     <div class="col-md-4">
                         <h3><%= user.name %></h3>
@@ -15,17 +19,29 @@
                         <p><%=  user.bio %></p>
                     </div>
                     <div class="col-md-4">
-                        <a class="btn btn-primary" href="/<%= user.username %>/post/new">Add a New Post</a>
-                        <a class="btn btn-warning" href="/<%= user.username %>/edit">Edit your profile</a>
+                        <% if(currentUser && user.username === currentUser.username){ %>
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fas fa-cog"></i>
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" href="/<%= user.username %>/edit">Edit your profile <i class="fas fa-user-edit"></i></a>
+                                    <form action="/<%= user.username %>?_method=DELETE" method="POST">
+                                        <button class="dropdown-item">Delete your profile <i class="fas fa-trash"></i></button>
+                                    </form>  
+                                </div>
+                            </div>
+                            <a class="btn btn-primary float" href="/<%= user.username %>/post/new">Add a New Post <i class="far fa-plus-square"></i></a>  
+                        <% } %>
                     </div>
                 </div>
             </div>
-            <div class="col-md-2 spacing"></div>
+            <div class="col-lg-2 spacing"></div>
         </div>
     </div>
 </div>
 
-<div class="container-fluid black no-padding">
+<div class="container-fluid content-back">
     <div class="row">
         <div class="col-md-2 spacing"></div>
         <div class="col-lg-8 middle">
@@ -34,10 +50,23 @@
                 <div class="card content-section postcard">
                     <div class="row">
                         <div class="col-md-8">
-                            <h3 class="card-title"><a href="/<%= user.username %>/post/<%= post._id %>"><%= post.title %></a></h3>
-                            <p class="card-text"><%= post.text %></p>
-                            <p class="card-text"><a href="/<%= user.username %>">By <%= user.username %></a></p>
+                            <h3 class="card-title"><a class="post-title" href="/<%= user.username %>/post/<%= post._id %>"><%= post.title %></a></h3>
+                            <a href="/<%= user.username %>/post/<%= post._id %>" class="post-title"><p class="card-text partial-post"><%= post.text %></p></a> 
+                            <p class="card-text"><a class="post-title" href="/<%= user.username %>">By <%= user.username %></a></p>
                             <p class="card-text"><small class="text-muted">December 5th 2019</small></p>
+                            <% if(currentUser && user.username === currentUser.username){ %>
+                                <div class="dropdown">
+                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="fas fa-cog"></i>
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="/<%= user.username %>/post/<%= post._id %>/edit">Edit this post <i class="fas fa-edit"></i></a>
+                                        <form action="/<%= user.username %>/post/<%= post._id %>?_method=DELETE" method="POST">
+                                            <button class="dropdown-item">Delete this <i class="fas fa-trash"></i></button>
+                                        </form>  
+                                    </div>
+                                </div>
+                            <% } %>
                         </div>
                         <div class="col-md-4">
                             <img src="<%= post.picture %>" class="card-img">

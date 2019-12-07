@@ -1,19 +1,28 @@
 <%- include ('../partials/header') %>
 
-<form action="/<%= username %>/post/<%= post._id %>?_method=PUT" method="POST">
-    <div class="form-group">
-        <input type="text" class="form-control" value="<%= post.title %>" name="post[title]">
-    </div>
-    <div class="form-group">
-        <input type="text" class="form-control" value="<%= post.text %>" name="post[text]">
-    </div>
-    <div class="form-group">
-        <input type="text" class="form-control" value="<%= post.picture %>" name="post[picture]">
-    </div> 
-    <div class="form-group">
-        <button class="btn btn-primary">Update</button>
-    </div>
-    <a href="/<%= username %>/post/<%= post._id %>">Go Back</a>
-</form>
 
+
+
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8 form">
+        <h2 class="register">Edit Post</h2>
+        <form action="/<%= currentUser.username %>/post/<%= post._id %>?_method=PUT" method="POST">
+            <div class="form-group">
+                <input type="text" class="form-control control" value="<%= post.title %>" name="post[title]">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control control" value="<%= post.picture %>" name="post[picture]">
+            </div> 
+            <div class="form-group">
+                <textarea type="text" class="form-control control" value="<%= post.text %>" name="post[text]" rows="10"></textarea>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary">Update</button>
+            </div>
+            <a href="/<%= username %>/post/<%= post._id %>">Go Back</a>
+        </form>
+    </div>
+    <div class="col-md-2"></div>
+</div>
 <%- include ('../partials/footer')  %>

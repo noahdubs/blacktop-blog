@@ -1,33 +1,41 @@
 <%- include ('./partials/header') %>
-<form action="/register" method="POST">
-    <div class="container center">
-        <h1>Register Here!!</h1>
-        <div class="form-group">
-            <label for="email">Email Address</label>
-            <input type="email" class="form-control " name="email" aria-describedby="emailHelp" placeholder="Enter email">
-            <small class="form-text text-muted">We'll never share your email with anyone else.</small>
-        </div>
-        <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" class="form-control" name="name" placeholder="Enter your name">
-        </div>
-        <div class="form-group">
-            <label for="username">Username</label>
-            <input type="text" class="form-control" name="username" placeholder="Enter a unique username">
-        </div>
-        <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" class="form-control" name="password" placeholder="Enter a unique password">
-        </div>
-        <div class="form-group">
-            <label for="profilepic">Pick a profile picture</label>
-            <input type="text" name="picture" class="form-control" class="form-control" placeholder="Enter Image URL">
-        </div>  
-        <div class="form-group">
-            <label for="bio">Tell us about yourself, this will be displayed on your profile</label>
-            <input type="text" name="bio" class="form-control" class="form-control" placeholder="Enter bio">
-        </div>     
-        <button class="btn btn-primary">Register</button>
+
+
+<div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6 form">
+        <form action="/register" method="POST">
+            <div class="container center">
+                <h2 class="register">Register</h2>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" class="form-control control" name="email" aria-describedby="emailHelp" placeholder="Enter email">
+                    <small class="form-text text-muted">We'll never share your email with anyone else.</small>
+                </div>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control control" name="name" placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" class="form-control control" name="username" placeholder="Enter a unique username">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control control" name="password" placeholder="Enter a unique password">
+                </div>
+                <div class="form-group">
+                    <label for="profilepic">Pick a profile picture</label>
+                    <input type="text" name="picture" class="form-control control" class="form-control" placeholder="Enter Image URL">
+                </div>  
+                <div class="form-group">
+                    <label for="bio">Enter a short bio</label>
+                    <textarea type="text" name="bio" class="form-control control" class="form-control" rows="3"></textarea>
+                </div>     
+                <button class="btn btn-primary">Register <i class="fas fa-user-plus"></i></button>
+            </div>
+        </form>
     </div>
-</form>
+    <div class="col-md-3"></div>
+</div>
 <%- include ('./partials/footer')  %>

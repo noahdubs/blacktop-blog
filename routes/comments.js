@@ -32,14 +32,15 @@ router.post("/", middleware.isLoggedIn, (req, res)=>{
                     console.log(err);
                 } else{
                     // add username and id to comment
-                    comment.author._id = req.user.id;
+                    comment.author.id = req.user._id;
                     comment.author.username = req.user.username;
+                    comment.author.name = req.user.name;
+                    comment.author.picture = req.user.picture;
                     comment.save();
                     // connect comment to post
                     post.comments.push(comment);
-                    console.log(post);
                     post.save();
-                    res.redirect("/home");
+                    res.redirect("back");
                 }
             });
         }

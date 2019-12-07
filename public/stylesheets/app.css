@@ -1,17 +1,66 @@
 body {
-    background:#171717;
-    color: #a5a5a5;
+    background: #171717;
+    color: #D0D0D0;
+    font-family: 'Roboto', sans-serif;
+}
+.thumbnail {
+    border: 1px solid #19B1FD; /* Gray border */
+    border-radius: 4px;  /* Rounded border */
+    padding: 5px; /* Some padding */
+    width: 100px; /* Set a small width */
+}
+.picture {
+    border: 1px solid #19B1FD;
+    padding: 5px
+}
+.comment-thumbnail {
+    width: 50px;
+}
+
+.post-title {
+    color: #B4B4B4;
+
+}
+.post-title:hover{
+    color: white;
+    text-decoration: none;
+} 
+.post-title:focus {
+    color: white;
+    text-decoration: none;
+}
+
+.one-post-cont {
+    margin-top: 2em;
 }
 
 .profile-top {
     background:#171717;
     padding: 2rem 1rem;
+    margin: 0;
+}
+
+.content-back {
+    background: #171717;
+}
+
+.navbar-custom {
+    background: #252527;
+    border-bottom: 2px solid #19B1FD;
 }
 
 .content-section {
-    background:  #323941;
+    background: #252527;
     
-    border: 1px solid white;
+    border-top: 2px solid #19B1FD;
+    border-left: 2px solid #19B1FD;
+    border-bottom: 2px solid #868686;
+    border-right: 2px solid #868686;
+    /* border-left: 2px solid #868686;
+    border-right: 2px solid #868686; */
+    /* border-bottom: 1px solid #1CFC1C; */
+    /* border-right: 1px solid #C85757; */
+    /* border-left: 2px solid #FF8D38; */
     
 }
 
@@ -20,7 +69,7 @@ body {
 }
 
 .postcard {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     padding: 1em;
 }
 
@@ -100,12 +149,7 @@ a :focus {
 .form-control {
     width: 50%;
     background: #171717;
-    border: 1px solid #212121;
-}
-
-.bright {
-    border-bottom: 1px solid #19B1FD;
-    margin: 0;
+    border: 2px solid #212121;
 }
 
 .pinkish {
@@ -121,12 +165,12 @@ a :focus {
 /* navbar link colors */
 .light {
     color: #a5a5a5;
-    background: #0e0e0e;
+    background: #252527;
     position: relative;
     display: block;
     margin:0;
-    padding-right: 20px;
-    padding-left: 20px;
+    padding-right: 30px;
+    padding-left: 30px;
     
 
 }
@@ -139,12 +183,12 @@ a :focus {
 
 /* hover bug */
 .light:focus {
-    background-color: #171717;
+    background-color: #1E1E1E;
     color:#a5a5a5;
     text-decoration: none;
 }
 .light:hover{
-    background-color: #171717;
+    background-color: #1E1E1E;
     color: #a5a5a5;
     text-decoration: none;
 }
@@ -156,3 +200,63 @@ a :focus {
 
 
 
+/* form classes */
+.form {
+    margin-top: 2em;
+    background: #252527;
+    padding: 4em;
+}
+
+.control{
+    width: 100%;
+    color: white;
+}
+
+.register {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #19B1FD;
+}
+
+.heading2 {
+    margin-bottom: 20px;
+}
+
+.dropdown-toggle {
+    float: right;
+    background: #252527;
+    border: none;
+    font-size: 20px;
+}
+
+.float {
+    float: right;
+}
+
+.partial-post {
+    height: 40px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-bottom: 5em;
+}
+
+.dark {
+    background: #252527;
+    border: none;
+}
+
+.comments {
+    padding-top: 1em;
+    border-bottom: 2px solid #19B1FD;
+}
+
+.username-display {
+    font-size: 14px;
+}
+
+.new-comment {
+    border-top: 2px solid #19B1FD;
+    padding-top: 2em;
+    padding-bottom: 2em;
+}

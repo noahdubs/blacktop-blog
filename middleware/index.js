@@ -18,6 +18,7 @@ middlewareObj.checkCommentOwner = (req, res, next)=>{
                req.flash("error", "something went wrong");
                res.redirect("back"); 
             } else {
+                console.log(foundComment);
                 if(foundComment.author.id.equals(req.user._id)) {
                     next();
                 } else {
