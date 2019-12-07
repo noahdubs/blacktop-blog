@@ -7,7 +7,6 @@ var express = require("express"),
     methodOverride = require("method-override");
     favicon = require("favicon");
     flash = require("connect-flash");
-    seeds = require("./seeds");
 
 // requiring routes
 var postRoute = require("./routes/post"),
@@ -23,7 +22,7 @@ app.use(methodOverride("_method"));
 app.use(flash());
 
 mongoose.connect("mongodb://localhost:27017/blog", {useNewUrlParser: true, useUnifiedTopology: true});
-// seeds();
+
 //passport config
 app.use(require("express-session")({
     secret: "wow look at this secret",
