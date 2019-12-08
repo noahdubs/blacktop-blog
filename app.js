@@ -49,5 +49,5 @@ app.use("/:username/post/:id/comments", commentRoute);
 
 
 app.listen(process.env.PORT, (req, res)=>{
-    console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+    console.log("Express server listening");
 });
