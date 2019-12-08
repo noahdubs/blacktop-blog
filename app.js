@@ -48,6 +48,6 @@ app.use("/:username/post", postRoute);
 app.use("/:username/post/:id/comments", commentRoute);
 
 
-app.listen(3000, (req, res)=>{
-    console.log("starting on port 3000");
+app.listen(process.env.PORT, (req, res)=>{
+    console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 });
