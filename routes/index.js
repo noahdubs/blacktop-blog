@@ -42,7 +42,9 @@ router.post("/register", (req, res)=>{
         }
         passport.authenticate("local")(req, res, ()=>{
             // redirect to user profile
-            res.redirect("/" + user.username);
+            console.log(user)
+            res.redirect(`/${user.username}`)
+            //res.json(user);
         });
     });
 });

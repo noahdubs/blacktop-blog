@@ -4,9 +4,11 @@ var express = require("express"),
     LocalStrategy = require("passport-local"),
     passport = require("passport"),
     User = require("./models/user"),
-    methodOverride = require("method-override");
-    favicon = require("favicon");
+    methodOverride = require("method-override"),
+    favicon = require("favicon"),
     flash = require("connect-flash");
+
+require('dotenv').config();
 
 // requiring routes
 var postRoute = require("./routes/post"),
@@ -21,7 +23,7 @@ app.use(express.static(__dirname+"/public"));
 app.use(methodOverride("_method"));
 app.use(flash());
 
-mongoose.connect("mongodb+srv://noahdubs:passkey@blacktop-zoobp.mongodb.net/test?retryWrites=true&w=majority", {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect(`mongodb+srv://noahdubs:${process.env.CLUSTER_PASSWORD}@cluster0-wbttr.mongodb.net/test?retryWrites=true&w=majority`, {useNewUrlParser: true, useUnifiedTopology: true});
 //"mongodb://localhost:27017/blog"
 //passport config
 app.use(require("express-session")({
@@ -48,6 +50,6 @@ app.use("/:username/post", postRoute);
 app.use("/:username/post/:id/comments", commentRoute);
 
 
-app.listen(process.env.PORT, (req, res)=>{
+app.listen(process.env.PORT || 3001, (req, res)=>{
     console.log("Express server listening");
 });
