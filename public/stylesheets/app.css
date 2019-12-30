@@ -7,14 +7,18 @@ body {
 .logo {
     font-size: 25px;
 }
+.red-btn {
+    background-color: #FF0000;
+    color: white;
+}
 .thumbnail {
-    border: 1px solid #19B1FD; /* Gray border */
+    border: 1px solid #FF0000; /* Gray border */
     border-radius: 4px;  /* Rounded border */
     padding: 5px; /* Some padding */
     width: 100px; /* Set a small width */
 }
 .picture {
-    border: 1px solid #19B1FD;
+    border: 1px solid #FF0000;
     padding: 5px;
     max-width: 90%;
 }
@@ -54,22 +58,16 @@ body {
 
 .navbar-custom {
     background: #252527;
-    border-bottom: 2px solid #19B1FD;
+    border-bottom: 3px solid #FF0000;
 }
 
 .content-section {
     background: #252527;
     
-    border-top: 2px solid #19B1FD;
-    border-left: 2px solid #19B1FD;
-    border-bottom: 2px solid #636363;
-    border-right: 2px solid #636363;
-    /* border-left: 2px solid #868686;
-    border-right: 2px solid #868686; */
-    /* border-bottom: 1px solid #1CFC1C; */
-    /* border-right: 1px solid #C85757; */
-    /* border-left: 2px solid #FF8D38; */
-    
+    border-top: 3px solid #FF0000;
+    border-left: 3px solid #FF0000;
+    border-bottom: 3px solid #636363;
+    border-right: 3px solid #636363;
 }
 
 .profile {
@@ -89,11 +87,11 @@ body {
 }
 
 a :focus {
-    color: #19B1FD;
+    color: #FF0000;
     background: #0e0e0e;
 }
 
- /*  */
+ 
 .no-padding {
     padding: 0;
 }
@@ -190,7 +188,7 @@ a :focus {
 .register {
     margin-bottom: 20px;
     padding-bottom: 10px;
-    border-bottom: 2px solid #19B1FD;
+    border-bottom: 2px solid #FF0000;
 }
 
 .heading2 {
@@ -222,7 +220,7 @@ a :focus {
 }
 .comments {
     padding-top: 1em;
-    border-top: 2px solid #19B1FD;
+    border-top: 2px solid #FF0000;
 }
 
 .username-display {
@@ -230,7 +228,7 @@ a :focus {
 }
 
 .new-comment {
-    border-top: 2px solid #19B1FD;
+    border-top: 2px solid #FF0000;
     padding-top: 2em;
     padding-bottom: 2em;
 }
