@@ -12,15 +12,13 @@ body {
     color: white;
 }
 .thumbnail {
-    border: 1px solid #FF0000; /* Gray border */
     border-radius: 4px;  /* Rounded border */
     padding: 5px; /* Some padding */
     width: 100px; /* Set a small width */
 }
 .picture {
-    border: 1px solid #FF0000;
     padding: 5px;
-    max-width: 90%;
+    max-width: 100%;
 }
 .card-picture {
     height: 300px;
@@ -64,18 +62,25 @@ body {
 .content-section {
     background: #252527;
     
-    border-top: 3px solid #FF0000;
-    border-left: 3px solid #FF0000;
+    border-top: 3px solid #636363;
+    border-left: 3px solid #636363;
     border-bottom: 3px solid #636363;
     border-right: 3px solid #636363;
 }
-
+.pic-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ind-post {
+    margin-bottom: 50px;
+}
 .profile {
     padding: 2em;
 }
 
 .postcard {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     padding: 1em;
 }
 
@@ -138,12 +143,10 @@ a :focus {
     padding: 10px;
 }
 #brand:hover{
-    color: #D0D0D0;
-    background: #171717;
+    color: #FF0000;
 }
 #brand:focus {
-    color: #D0D0D0;
-    background: #171717;
+    color:#FF0000;
 }
 
 /* remove li dot */
@@ -154,13 +157,11 @@ a :focus {
 
 /* hover bug */
 .light:focus {
-    background-color: #171717;
-    color:#D0D0D0;
+    color: #FF0000 !important;
     text-decoration: none;
 }
 .light:hover{
-    background-color: #171717;
-    color: #D0D0D0;
+    color: #FF0000 !important;
     text-decoration: none;
 }
 
@@ -169,8 +170,9 @@ a :focus {
     padding:0;
 }
 
-.posted {
-    border-bottom: 1px solid #636363;
+
+.posted:hover {
+    color: #FF0000;
 }
 
 /* form classes */
@@ -212,7 +214,7 @@ a :focus {
 }
 .partial-post {
     padding-top: 1em;
-    padding-bottom: 6em;
+    padding-bottom: 1em;
     font-size: 18px;
 }
 .no-pad {
@@ -220,7 +222,7 @@ a :focus {
 }
 .comments {
     padding-top: 1em;
-    border-top: 2px solid #FF0000;
+    border-top: 2px solid ;
 }
 
 .username-display {
@@ -228,7 +230,7 @@ a :focus {
 }
 
 .new-comment {
-    border-top: 2px solid #FF0000;
+    border-top: 2px solid #636363;
     padding-top: 2em;
     padding-bottom: 2em;
 }
@@ -252,6 +254,6 @@ a :focus {
 
 .latest {
     padding-bottom: 10px;
-    border-bottom: 2px solid #636363;
+    border-bottom: 2px solid #FF0000;
     margin-bottom: 1em;
 }

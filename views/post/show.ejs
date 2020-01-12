@@ -2,7 +2,7 @@
 <div class="container-fluid content-back one-post-cont need-more-space">
     <div class="row">
         <div class="col-md-2"></div>
-        <div class="col-md-8 content-section">
+        <div class="col-md-8 content-section ind-post">
             <div class="row">
                 <div class="col-md-1"></div>
                 <div class="col-md-10 dark">
@@ -19,8 +19,8 @@
                                     <% } %>
                                 </div>
                                 <div class="col-md-7">
-                                    <a href="/<%= post.author.username %>" class="post-title"><h4><%= post.author.name %></h4></a>
-                                    <a href="/<%= post.author.username %>" class="post-title"> <p><%= post.author.username %></p></a>
+                                    <a href="/<%= post.author.username %>" class="post-title posted"><h4><%= post.author.name %></h4></a>
+                                    <a href="/<%= post.author.username %>" class="post-title posted"> <p><%= post.author.username %></p></a>
                                 </div>
                                 <div class="col-md-3">
                                     <% if(currentUser && post.author.username === currentUser.username){ %>

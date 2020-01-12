@@ -50,8 +50,8 @@
                         <div class="col-md-8">
                             <h3 class="card-title"><a class="post-title posted" href="/<%= user.username %>/post/<%= post._id %>"><%= post.title %></a></h3>
                             <a href="/<%= user.username %>/post/<%= post._id %>" class="post-title"><p class="card-text partial-post"><%= post.text %>...</p></a> 
-                            <p class="card-text"><a class="post-title" href="/<%= user.username %>">Submitted by: <%= user.name %></a></p>
-                            <p class="card-text"><a class="post-title" href="/<%= user.username %>">@<%= user.username %></a></p>
+                            <p class="card-text"><a class="post-title posted" href="/<%= user.username %>">Submitted by: <%= user.name %></a></p>
+                            <p class="card-text"><a class="post-title posted" href="/<%= user.username %>">@<%= user.username %></a></p>
 
                             <% if(currentUser && user.username === currentUser.username){ %>
                                 <div class="dropdown edit-post">
@@ -67,7 +67,7 @@
                                 </div>
                             <% } %>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-4 pic-row">
                             <img src="<%= post.picture %>" class="card-img">
                         </div>
                     </div>
