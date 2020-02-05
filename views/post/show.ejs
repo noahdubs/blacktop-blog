@@ -65,11 +65,11 @@
                                     <div class="col-md-1">
                                         <a href="/<%= comment.author.username %>"><img src="<%= comment.author.picture %>" class="rounded-circle comment-thumbnail"></a>
                                     </div>
-                                    <div class="col-md-2">
+                                    <div class="col-md-3">
                                         <a href="/<%= comment.author.username %>" class="post-title"><strong><%= comment.author.name %></strong></a>
-                                        <a href="/<%= comment.author.username %>" class="post-title"><p class="username-display"><%= comment.author.username %></p></a>
+                                        <a href="/<%= comment.author.username %>" class="post-title"><p class="username-display">@<%= comment.author.username %></p></a>
                                     </div>
-                                    <div class="col-md-7">
+                                    <div class="col-md-6">
                                         <p><%= comment.text %></p>
                                     </div>
                                     <div class="col-md-2">

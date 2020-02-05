@@ -3,45 +3,68 @@ body, html {
     color: #D0D0D0;
     height: 100%;
 }
-.whole {
-    height: 100%;
+.landing-nav {
+    background-color: transparent;
 }
-.right {
-    background: #252527;
+.navbar-brand {
+    color: #D0D0D0;
+    font-size: 25px;
+}
+.navbar-brand:hover {
+    color: red;
+}
+.landing-div {
     height: 100%;
+    width: 100%;
+    display: flex;
+}
+.left-side, .right-side {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
     align-items: center;
 }
-
-#headingGroup h2 {
-    font-size: 2rem;
-}
-.centered{
-    padding-left: 10em;
+.landing-icon {
+    color: red;
 }
 
-.headings {
-    padding-bottom: .5em;
-}
 
-.borders {
-    border-left: 2px solid #FF0000;
+.right-side{
+    background-color: #636363;
+    border-left: 5px solid #D0D0D0;
 }
-/* buttons */
-.button {
-    display: block;
-    margin-bottom: 1.5em;
-    width: 20em;
-    height: 2em;
-    font-weight: 600;
-    
+.landing-btn-div {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
 }
-
-.register {
-    background: #FF0000;
+.btn-register {
+    background-color: red;
+    width: 45%;
+}
+.btn-sign-in {
+    background-color: #171717;
+    width: 45%;
+}
+.land-btn {
+    color: #D0D0D0;
+    border-radius: 5px;
+}
+.land-btn:hover {
     color: #D0D0D0;
 }
 
-.sign-up {
-    background: #D0D0D0;
-    color: #FF0000;
+@media (max-width: 925px){
+    .landing-div {
+        display: inline;
+    }
+    .left-side, .right-side {
+        width: 100%;
+        height: 50%;
+    }
+    .right-side {
+        border: none;
+        border-top: 5px solid #D0D0D0;
+    }
 }
