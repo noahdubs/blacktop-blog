@@ -6,6 +6,7 @@ var express = require("express"),
     User = require("./models/user"),
     methodOverride = require("method-override"),
     favicon = require("favicon"),
+    favicon        = require("serve-favicon");
     flash = require("connect-flash");
 
 require('dotenv').config();
