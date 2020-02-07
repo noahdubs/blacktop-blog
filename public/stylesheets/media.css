@@ -1,0 +1,134 @@
+.comments {
+    border-radius: 0;
+}
+@media (max-width: 350px) {
+    .logo {
+        font-size: 22px;
+    }
+    .need-more-space {
+        margin-top: 5em;
+    }
+    .form {
+        padding: 2.5em .5em 2em .5em;
+    }
+    .latest {
+        padding-top: .4em;
+        margin-bottom: .5em;
+    }
+    .profile {
+        padding: 1em .5em;
+    }
+    .postcard {
+        padding: 1em .3em;
+    }
+    .user-blog-post {
+        padding: 0;
+    }
+    .middle {
+        padding: 0;
+    }
+    .ind-post {
+        padding: 0;
+    }
+    .dark {
+        padding: 0;
+    }
+    .card-body {
+        padding: 1em .5em;
+    }
+    .card-title {
+        margin: 0;
+    }
+    .new-comment h3 {
+        width: 94%;
+        margin-left: 2%;
+        font-size: 1rem;
+        text-align: center;
+    }
+    .new-comm-form {
+        width: 94%;
+        margin-left: 2%;
+    }
+    .comm-h3 {
+        width: 94%;
+        margin-left: 2%;
+    }
+    .comments {
+        padding: 5px;
+        width: 94%;
+        margin-left: 2%;
+    }
+}
+
+@media (min-width: 351px) {
+    .form {
+        padding: 2.5em .5em 2em .5em;
+    }
+    .latest {
+        padding-top: .4em;
+        margin-bottom: .5em;
+    }
+    .profile {
+        padding: 1em .5em;
+    }
+    .postcard {
+        padding: 1em .3em;
+    }
+    .user-blog-post {
+        padding: 0;
+    }
+    .middle {
+        padding: 0;
+    }
+    .ind-post {
+        padding: 0;
+    }
+    .dark {
+        padding: 0;
+    }
+    .card-body {
+        padding: 1em .5em;
+    }
+    .card-title {
+        margin: 0;
+    }
+    .new-comment h3 {
+        width: 94%;
+        margin-left: 2%;
+        font-size: 1.3rem;
+        text-align: center;
+    }
+    .new-comm-form {
+        width: 94%;
+        margin-left: 2%;
+    }
+    .comm-h3 {
+        width: 94%;
+        margin-left: 2%;
+    }
+    .comments {
+        padding: 5px;
+        width: 94%;
+        margin-left: 2%;
+    }
+}
+
+@media (min-width: 420px) {
+    .latest {
+        margin-bottom: 1em;
+    }
+    .form {
+        padding: 4em;
+    }
+    .need-more-space {
+        margin-top: 7em;
+    }
+    .profile {
+        padding: 2em;
+    }
+    .postcard {
+        padding: 1em;
+    }
+}
+
+

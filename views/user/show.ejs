@@ -47,7 +47,7 @@
             <% user.posts.forEach((post)=>{ %>
                 <div class="card content-section postcard">
                     <div class="row">
-                        <div class="col-md-8">
+                        <div class="col-md-8 user-blog-post">
                             <h3 class="card-title"><a class="post-title posted" href="/<%= user.username %>/post/<%= post._id %>"><%= post.title %></a></h3>
                             <a href="/<%= user.username %>/post/<%= post._id %>" class="post-title"><p class="card-text partial-post"><%= post.text %>...</p></a> 
                             <p class="card-text"><a class="post-title posted" href="/<%= user.username %>">Submitted by: <%= user.name %></a></p>
